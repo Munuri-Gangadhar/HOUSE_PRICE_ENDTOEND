@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+
+    body {
+      font-family: 'Arimo', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .login {
+      margin-top: 50px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="login">
+          <h1>Boston House Price Prediction</h1>
+          <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" class="form-control" name="CRIM" placeholder="CRIM" required="required" /><br>
+            <input type="text" class="form-control" name="ZN" placeholder="ZN" required="required" /><br>
+            <input type="text" class="form-control" name="INDUS" placeholder="INDUS" required="required" /><br>
+            <input type="text" class="form-control" name="CHAS" placeholder="CHAS" required="required" /><br>
+            <input type="text" class="form-control" name="NOX" placeholder="NOX" required="required" /><br>
+            <input type="text" class="form-control" name="RM" placeholder="RM" required="required" /><br>
+            <input type="text" class="form-control" name="Age" placeholder="Age" required="required" /><br>
+            <input type="text" class="form-control" name="DIS" placeholder="DIS" required="required" /><br>
+            <input type="text" class="form-control" name="RAD" placeholder="RAD" required="required" /><br>
+            <input type="text" class="form-control" name="TAX" placeholder="TAX" required="required" /><br>
+            <input type="text" class="form-control" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+            <input type="text" class="form-control" name="B" placeholder="B" required="required" /><br>
+            <input type="text" class="form-control" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+
+            <button type="submit">Predict</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{prediction_text}}
+</body>
+
+</html>
